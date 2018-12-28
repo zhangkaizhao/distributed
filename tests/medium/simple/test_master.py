@@ -25,12 +25,13 @@ class MasterTestCase(unittest.TestCase):
     def setUp(self):
         port1 = unused_port()
         port2 = unused_port()
-        worker_app = simple_worker.init()
+        worker_app1 = simple_worker.init()
+        worker_app2 = simple_worker.init()
         process1 = multiprocessing.Process(
-            target=start_worker_server, args=(worker_app, port1)
+            target=start_worker_server, args=(worker_app1, port1)
         )
         process2 = multiprocessing.Process(
-            target=start_worker_server, args=(worker_app, port2)
+            target=start_worker_server, args=(worker_app2, port2)
         )
         process1.start()
         process2.start()
