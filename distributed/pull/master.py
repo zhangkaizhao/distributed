@@ -186,7 +186,7 @@ class Master:
     def get_earlist_timeout_file(self) -> Optional[Tuple[str, str, float]]:
         result = None
         for worker_name, file_path, start_at in self.iter_timeout_files():
-            if result is None or start_at < result[1]:
+            if result is None or start_at < result[2]:
                 result = worker_name, file_path, start_at
         return result
 
