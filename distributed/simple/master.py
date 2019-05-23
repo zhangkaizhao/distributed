@@ -66,9 +66,7 @@ class Master:
             self.workers.append(worker)
         print("workers created.")
 
-        self._worker_tasks: List[
-            asyncio.Task[Callable[[_Worker], Awaitable[None]]]
-        ] = []
+        self._worker_tasks: List[asyncio.Task] = []
 
     async def _start_worker_tasks(self) -> None:
         print("preparing worker tasks...")

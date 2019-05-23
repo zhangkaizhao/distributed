@@ -19,7 +19,7 @@ class Home:
                 self._load_files(entry.path)
 
     def _get_rel_path(self, full_path: str) -> str:
-        return full_path[len(self.home_dir) + 1 :]
+        return full_path[len(self.home_dir) + 1:]
 
     def load_files(self) -> None:
         if self._files_loaded:

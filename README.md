@@ -115,7 +115,7 @@ Here is an example to use poetry and Supervisor for local development.
 For simple push recipe, start worker servers firstly:
 
 ```sh
-supervisord -c development/conf_supervisor_simple.conf
+poetry run supervisord -c development/conf_supervisor_simple.conf
 ```
 
 and then run the master:
@@ -127,7 +127,7 @@ poetry run python -m distributed.simple.master
 For pull recipe, start master server firstly:
 
 ```sh
-supervisord -c development/conf_supervisor_pull.conf
+poetry run supervisord -c development/conf_supervisor_pull.conf
 ```
 
 and then run some workers:
