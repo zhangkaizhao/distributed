@@ -269,7 +269,7 @@ async def get_file(request: web.Request) -> FileResponse:
     except asyncio.QueueEmpty:
         # try to get timeout task
         timeout_file = master.get_earlist_timeout_file()
-        if file_path:
+        if timeout_file:
             _worker_name, file_path, _ = timeout_file
             # remove old processing file
             master.remove_current_processing_file(_worker_name, file_path)
